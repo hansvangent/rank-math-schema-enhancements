@@ -25,6 +25,48 @@
                 "append": ""
             },
             {
+                "key": "field_6565a1a5b0380",
+                "label": "honorificPrefix",
+                "name": "PersonhonorificPrefix",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "wpml_cf_preferences": 2,
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6565a1aeb0381",
+                "label": "honorificSuffix",
+                "name": "PersonhonorificSuffix",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "wpml_cf_preferences": 2,
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
                 "key": "field_655889e972a4e",
                 "label": "knowsAbout markup",
                 "name": "PersonKnowsAbout",

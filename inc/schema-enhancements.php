@@ -30,11 +30,13 @@ class SchemaEnhancements {
 			 }
 
 			 $hasPersonTitle = get_field('PersonTitle', 'user_' . $author_id);
+			 $hasPersonhonorificPrefix = get_field('PersonhonorificPrefix', 'user_' . $author_id);
+			 $hasPersonhonorificSuffix = get_field('PersonhonorificSuffix', 'user_' . $author_id);
 			 $hasPersonKnowsAbout = get_field('PersonKnowsAbout', 'user_' . $author_id);
 			 $hasPersonAlumniOf = have_rows('PersonAlumniOf', 'user_' . $author_id);
 			 $hasPersonAwards = have_rows('PersonAwards', 'user_' . $author_id);
 
-			 if ($hasPersonTitle || $hasPersonKnowsAbout || $hasPersonAlumniOf || $hasPersonAwards) {
+			 if ($hasPersonTitle || $hasPersonhonorificPrefix || $hasPersonhonorificSuffix || $hasPersonKnowsAbout || $hasPersonAlumniOf || $hasPersonAwards) {
 				 $data['personSchema'] = [
 					 '@type' => 'Person',
 				 ];
@@ -42,6 +44,14 @@ class SchemaEnhancements {
 				 if ($hasPersonTitle) {
 					 $data['personSchema']['jobTitle'] = $hasPersonTitle;
 				 }
+
+				 if ($hasPersonhonorificPrefix) {
+					  $data['personSchema']['honorificPrefix'] = $hasPersonhonorificPrefix;
+				  }
+
+				  if ($hasPersonhonorificSuffix) {
+					   $data['personSchema']['honorificSuffix'] = $hasPersonhonorificSuffix;
+				   }
 
 				 if ($hasPersonKnowsAbout) {
 					 $data['personSchema']['knowsAbout'] = [$hasPersonKnowsAbout];

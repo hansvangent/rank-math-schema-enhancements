@@ -25,7 +25,7 @@ new SchemaEnhancements();
 
 3. Import the "acf-schema-enhancements.json" file into your Advanced Custom Fields under tools > import to add the necessary fields into the user profiles (for the person enhancements) and posts/pages (for the FAQ enhancements and future JobPosting, Event and Course).
 
-4. After adding content to the user profiles on your website, the schema markup will automatically be added to author archive page and to the posts and pages created by that author. If you want show the content of those fields on the author archive page in HTMl you can so by using the following code example:
+4. After adding content to the user profiles on your website, the schema markup will automatically be added to the author archive page and to the posts and pages created by that author. If you want to show the content of those fields on the author archive page in HTML, you can do so by using the following code example:
 
 ```php
 $honorificPrefix = get_field('PersonhonorificPrefix', 'user_' . $author_id);
@@ -41,7 +41,7 @@ if (!empty($honorificSuffix)) {
 }
 ```
 
-To add the full name of the author and the potential 'honorificPrefix' and 'honorificSuffix'. The various field names can be found in your WordPress backend ACF > Field Groups > Author E-E-A-T Schema
+To add the full name of the author and the potential 'honorificPrefix' and 'honorificSuffix.' The various field names are located in your WordPress backend ACF > Field Groups > Author E-E-A-T Schema.
 
 ## Get Help
 

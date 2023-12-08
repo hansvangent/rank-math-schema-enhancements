@@ -4,12 +4,12 @@ Boost your WordPress SEO effortlessly with Schema Enhancements, the key to unloc
 
 ## Features
 
-- **Person Schema**: Augment `Person` schema with comprehensive attributes to enhance your E-E-A-T profile.
+- **Person Schema**: Augment `Person` schema with comprehensive attributes to enhance your E-E-A-T profile (jobTitle/honoricPrefix/honoricSuffix/knowsAbout/alumniOf/Awards).
 - **FAQ Schema**: Seamlessly generate `FAQPage` schema from ACF repeater fields for direct answers in search results.
+- **JobPosting Schema**: Optimize job listings with detailed information like employment type, location, and qualifications, so you can get featured directly in Google for Jobs.
 
 ## Upcoming Enhancements
 
-- `JobPosting`
 - `Event`
 - `Course`
 

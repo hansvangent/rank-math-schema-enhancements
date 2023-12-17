@@ -2,12 +2,12 @@
 /* ---------------------------------------------------------------------------
  * Schema Markup Enhancements using RankMath
  * Currently it supports the following schema sets:
- *	 * Person
- *   * FAQPage
- *   * Job Posting
+ *	* Person
+ *	* FAQPage
+ *	* Job Posting
+ *	* Event
  *
  * Still to do:
- * 	* Event
  *	* Course
  *
  * --------------------------------------------------------------------------- */
@@ -19,9 +19,9 @@ class SchemaEnhancements {
 
 	public function enhance_json_ld($data, $jsonld) {
 		// Check for an author page and set $author_id
-		if ((is_single() || is_page()) || is_author()) {
+		if ((is_single() || is_page() || is_singular('academy')) || is_author()) {
 
-			if (is_single() || is_page()) {
+			if (is_single() || is_page() || is_singular('academy')) {
 				$author_id = get_post_field('post_author', get_the_ID());
 			}
 
@@ -96,8 +96,7 @@ class SchemaEnhancements {
 			 }
 		}
 
-		$has_faqs = have_rows('frequently_asked_questions');
-		if ($has_faqs && !is_author()) {
+		if (have_rows('frequently_asked_questions') && !is_author()) {
 			$data['faqs'] = [
 				'@type' => 'FAQPage',
 			];
@@ -125,8 +124,7 @@ class SchemaEnhancements {
 			}
 		}
 
-		$has_jobs = have_rows('job_listing');
-		if ($has_jobs && !is_author()) {
+		if (get_field('create_new_job_listing') === 'Yes' && have_rows('job_listing') && !is_author()) {
 			$data['jobs'] = [];
 
 			while (have_rows('job_listing')) {
@@ -174,7 +172,7 @@ class SchemaEnhancements {
 								'@type' => 'PostalAddress',
 								'streetAddress' => get_sub_field('job_location_streetaddress'),
 								'addressLocality' => get_sub_field('job_location_locality'),
-								'addressRegion' => get_sub_field('job_address_region'),
+								'addressRegion' => get_sub_field('job_location_region'),
 								'postalCode' => get_sub_field('job_location_postalcode'),
 								'addressCountry' => get_sub_field('job_location_country')
 							]
@@ -210,7 +208,7 @@ class SchemaEnhancements {
 							'@type' => 'PostalAddress',
 							'streetAddress' => get_sub_field('job_location_streetaddress'),
 							'addressLocality' => get_sub_field('job_location_locality'),
-							'addressRegion' => get_sub_field('job_address_region'),
+							'addressRegion' => get_sub_field('job_location_region'),
 							'postalCode' => get_sub_field('job_location_postalcode'),
 							'addressCountry' => get_sub_field('job_location_country')
 						]
@@ -235,6 +233,134 @@ class SchemaEnhancements {
 
 				// Add the job to the jobs array
 				$data['jobs'][] = $job;
+			}
+		}
+
+		if (get_field('create_new_event_listing') === 'Yes' && have_rows('event_listing') && !is_author()) {
+			$data['events'] = [];
+
+			while (have_rows('event_listing')) {
+				the_row();
+				$event = [
+					'@type' => 'Event',
+					'name' => get_sub_field('event_name'),
+					'startDate' => get_sub_field('event_start_date'),
+					'endDate' => get_sub_field('event_end_date'),
+					'description' => get_sub_field('event_description'),
+					'eventAttendanceMode' => get_sub_field('event_attendance_mode'),
+					'location' => [],
+					'image' => []
+				];
+
+				// Event Status
+				$eventStatus = get_sub_field('event_status');
+				if (!empty($eventStatus)) {
+					$event['eventStatus'] = 'https://schema.org/' . $eventStatus;
+				}
+
+				// Event Location
+				$eventLocationType = get_sub_field('event_location');
+				if ($eventLocationType === 'Physical location') {
+					$event['location'] = [
+						'@type' => 'Place',
+						'address' => [
+							'@type' => 'PostalAddress',
+							'streetAddress' => get_sub_field('event_location_streetaddress'),
+							'addressLocality' => get_sub_field('event_location_locality'),
+							'addressRegion' => get_sub_field('event_location_region'),
+							'postalCode' => get_sub_field('event_location_postalcode'),
+							'addressCountry' => get_sub_field('event_location_country')
+						],
+						'geo' => [
+							'@type' => 'GeoCoordinates',
+							'latitude' => get_sub_field('event_location_latitude'),
+							'longitude' => get_sub_field('event_location_longitude')
+						],
+						'url' => get_sub_field('event_location_hasmap')
+					];
+
+					// Event Location Name
+					$locationName = get_sub_field('event_location_name');
+					if (!empty($locationName)) {
+						$event['location']['name'] = $locationName;
+					}
+				} else if ($eventLocationType === 'Online event') {
+					$event['location'] = [
+						'@type' => 'VirtualLocation',
+						'url' => get_sub_field('event_location_url')
+					];
+				}
+
+				// Event Images
+				if (have_rows('event_image')) {
+					while (have_rows('event_image')) {
+						the_row();
+						$image = get_sub_field('event_image_repeater');
+						if ($image) {
+							$event['image'][] = [
+								'@type' => 'ImageObject',
+								'url' => $image['url']
+							];
+						}
+					}
+				}
+
+				// Event Organizer
+				$organizerType = get_sub_field('event_organizer');
+				if ($organizerType === 'Person' || $organizerType === 'Organization') {
+					$event['organizer'] = [
+						'@type' => $organizerType,
+						'name' => get_sub_field('event_organizer_name'),
+						'url' => get_sub_field('event_organizer_url')
+					];
+				}
+
+				// Event Performer
+				$performerType = get_sub_field('event_performer');
+				if ($performerType === 'Person') {
+					$event['performer'] = [];
+					if (have_rows('event_performer_person')) {
+						while (have_rows('event_performer_person')) {
+							the_row();
+							$event['performer'][] = [
+								'@type' => 'Person',
+								'name' => get_sub_field('even_performer_person_name')
+							];
+						}
+					}
+				} elseif ($performerType === 'PerformingGroup') {
+					$performingGroupName = get_sub_field('event_performing_group_name');
+					if (!empty($performingGroupName)) {
+						$event['performer'] = [
+							'@type' => 'PerformingGroup',
+							'name' => $performingGroupName
+						];
+					}
+				}
+
+				// Event Offers
+				if (get_sub_field('event_offer') === 'Yes' && have_rows('event_offers')) {
+					while (have_rows('event_offers')) {
+						the_row();
+						$offer = [
+							'@type' => 'Offer',
+							'availability' => 'http://schema.org/' . get_sub_field('event_offers_availability'),
+							'price' => get_sub_field('event_offers_price'),
+							'priceCurrency' => get_sub_field('event_offers_pricecurrency'),
+							'url' => get_sub_field('event_offers_url')
+						];
+
+						$validFrom = get_sub_field('event_offers_validfrom');
+						if ($validFrom) {
+							$offer['validFrom'] = $validFrom;
+						}
+
+						$event['offers'][] = $offer;
+					}
+				}
+
+				// Add the event to the events array
+				$data['events'][] = $event;
 			}
 		}
 

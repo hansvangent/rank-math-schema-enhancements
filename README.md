@@ -6,11 +6,17 @@ Boost your WordPress SEO effortlessly with Schema Enhancements, the key to unloc
 
 - **Person Schema**: Augment `Person` schema with comprehensive attributes to enhance your E-E-A-T profile (jobTitle/honoricPrefix/honoricSuffix/knowsAbout/alumniOf/Awards).
 - **FAQ Schema**: Seamlessly generate `FAQPage` schema from ACF repeater fields for direct answers in search results.
+
+*Added  on 29/11/2023:*
 - **JobPosting Schema**: Optimize job listings with detailed information like employment type, location, and qualifications, so you can get featured directly in Google for Jobs.
+
+*Added on 17/12/2023:*
+- **Event Schema**: Event markup allows people to discover your event when they search for "concerts this weekend" or "workshops near me." People can also discover your event when they search for venues, such as sports stadiums or a local pub. These special Event Rich Results, not only improves discoverability but also provides users with key event information directly in search results, leading to better engagement and higher click-through rates. Learn how [Eventbrite saw a 100% increase](https://developers.google.com/search/case-studies/eventbrite-case-study), for example, in the typical year-over-year growth of traffic from Google Search.
+
+Use the "Search appearance..." filter on your Performance Report in Search Console to see how your individual enhancements are performing.
 
 ## Upcoming Enhancements
 
-- `Event`
 - `Course`
 
 ## Quick Start

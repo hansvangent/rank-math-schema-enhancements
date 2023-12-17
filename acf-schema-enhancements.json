@@ -230,6 +230,27 @@
                         "parent_repeater": "field_6558e7c2df797"
                     }
                 ]
+            },
+            {
+                "key": "field_657707e750781",
+                "label": "Quote",
+                "name": "PersonQuote",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "wpml_cf_preferences": 2,
+                "default_value": "",
+                "maxlength": "",
+                "rows": "",
+                "placeholder": "",
+                "new_lines": ""
             }
         ],
         "location": [
@@ -409,11 +430,11 @@
                 "endpoint": 0
             },
             {
-                "key": "field_65665822e9a52",
-                "label": "New Job",
-                "name": "job_listing",
+                "key": "field_6578dacd8f2c3",
+                "label": "Create New Job Listing",
+                "name": "create_new_job_listing",
                 "aria-label": "",
-                "type": "repeater",
+                "type": "select",
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -423,13 +444,42 @@
                     "id": ""
                 },
                 "wpml_cf_preferences": 0,
-                "layout": "row",
-                "pagination": 0,
-                "min": 0,
-                "max": 0,
-                "collapsed": "",
-                "button_label": "Add Row",
-                "rows_per_page": 20,
+                "choices": {
+                    "No": "No",
+                    "Yes": "Yes"
+                },
+                "default_value": "No",
+                "return_format": "value",
+                "multiple": 0,
+                "allow_null": 0,
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_6578d51bdefac",
+                "label": "New Job",
+                "name": "job_listing",
+                "aria-label": "",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_6578dacd8f2c3",
+                            "operator": "==",
+                            "value": "Yes"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "wpml_cf_preferences": 0,
+                "layout": "block",
                 "sub_fields": [
                     {
                         "key": "field_656656c36134b",
@@ -450,8 +500,7 @@
                         "maxlength": "",
                         "placeholder": "",
                         "prepend": "",
-                        "append": "",
-                        "parent_repeater": "field_65665822e9a52"
+                        "append": ""
                     },
                     {
                         "key": "field_656656dc6134c",
@@ -472,8 +521,7 @@
                         "maxlength": "",
                         "rows": "",
                         "placeholder": "",
-                        "new_lines": "",
-                        "parent_repeater": "field_65665822e9a52"
+                        "new_lines": ""
                     },
                     {
                         "key": "field_656657406134d",
@@ -494,8 +542,7 @@
                         "maxlength": "",
                         "rows": "",
                         "placeholder": "",
-                        "new_lines": "",
-                        "parent_repeater": "field_65665822e9a52"
+                        "new_lines": ""
                     },
                     {
                         "key": "field_6566578de9a50",
@@ -516,8 +563,7 @@
                         "maxlength": "",
                         "rows": "",
                         "placeholder": "",
-                        "new_lines": "",
-                        "parent_repeater": "field_65665822e9a52"
+                        "new_lines": ""
                     },
                     {
                         "key": "field_656657b7e9a51",
@@ -540,8 +586,7 @@
                         "placeholder": "",
                         "step": "",
                         "prepend": "",
-                        "append": "",
-                        "parent_repeater": "field_65665822e9a52"
+                        "append": ""
                     },
                     {
                         "key": "field_65665862e9a53",
@@ -560,8 +605,7 @@
                         "wpml_cf_preferences": 0,
                         "display_format": "d\/m\/Y",
                         "return_format": "d\/m\/Y",
-                        "first_day": 1,
-                        "parent_repeater": "field_65665822e9a52"
+                        "first_day": 1
                     },
                     {
                         "key": "field_6566587de9a54",
@@ -580,8 +624,7 @@
                         "wpml_cf_preferences": 0,
                         "display_format": "d\/m\/Y g:i a",
                         "return_format": "d\/m\/Y g:i a",
-                        "first_day": 1,
-                        "parent_repeater": "field_65665822e9a52"
+                        "first_day": 1
                     },
                     {
                         "key": "field_656658a7e9a55",
@@ -614,8 +657,7 @@
                         "allow_null": 0,
                         "ui": 0,
                         "ajax": 0,
-                        "placeholder": "",
-                        "parent_repeater": "field_65665822e9a52"
+                        "placeholder": ""
                     },
                     {
                         "key": "field_656659aa92753",
@@ -636,8 +678,7 @@
                         "maxlength": "",
                         "placeholder": "",
                         "prepend": "",
-                        "append": "",
-                        "parent_repeater": "field_65665822e9a52"
+                        "append": ""
                     },
                     {
                         "key": "field_656659cf92754",
@@ -658,8 +699,7 @@
                         "maxlength": "",
                         "rows": "",
                         "placeholder": "",
-                        "new_lines": "",
-                        "parent_repeater": "field_65665822e9a52"
+                        "new_lines": ""
                     },
                     {
                         "key": "field_656659ea92755",
@@ -685,8 +725,7 @@
                         "max_height": "",
                         "max_size": "",
                         "mime_types": "",
-                        "preview_size": "medium",
-                        "parent_repeater": "field_65665822e9a52"
+                        "preview_size": "medium"
                     },
                     {
                         "key": "field_656663e053d61",
@@ -713,8 +752,7 @@
                         "allow_null": 0,
                         "ui": 0,
                         "ajax": 0,
-                        "placeholder": "",
-                        "parent_repeater": "field_65665822e9a52"
+                        "placeholder": ""
                     },
                     {
                         "key": "field_6566696566eb9",
@@ -945,8 +983,7 @@
                         "allow_null": 0,
                         "ui": 0,
                         "ajax": 0,
-                        "placeholder": "",
-                        "parent_repeater": "field_65665822e9a52"
+                        "placeholder": ""
                     },
                     {
                         "key": "field_65665ae83d996",
@@ -982,8 +1019,7 @@
                         "maxlength": "",
                         "placeholder": "",
                         "prepend": "",
-                        "append": "",
-                        "parent_repeater": "field_65665822e9a52"
+                        "append": ""
                     },
                     {
                         "key": "field_65665b073d997",
@@ -1019,16 +1055,15 @@
                         "maxlength": "",
                         "placeholder": "",
                         "prepend": "",
-                        "append": "",
-                        "parent_repeater": "field_65665822e9a52"
+                        "append": ""
                     },
                     {
-                        "key": "field_6567b96e12d94",
-                        "label": "Job Address Region",
-                        "name": "job_address_region",
+                        "key": "field_65689b69f3982",
+                        "label": "Job Location Region",
+                        "name": "job_location_region",
                         "aria-label": "",
                         "type": "text",
-                        "instructions": "The region in which the locality is, and which is in the country. For example, California.",
+                        "instructions": "",
                         "required": 0,
                         "conditional_logic": 0,
                         "wrapper": {
@@ -1036,12 +1071,12 @@
                             "class": "",
                             "id": ""
                         },
+                        "wpml_cf_preferences": 0,
                         "default_value": "",
                         "maxlength": "",
                         "placeholder": "",
                         "prepend": "",
-                        "append": "",
-                        "parent_repeater": "field_65665822e9a52"
+                        "append": ""
                     },
                     {
                         "key": "field_65665b173d998",
@@ -1077,15 +1112,14 @@
                         "maxlength": "",
                         "placeholder": "",
                         "prepend": "",
-                        "append": "",
-                        "parent_repeater": "field_65665822e9a52"
+                        "append": ""
                     },
                     {
                         "key": "field_65665b283d999",
                         "label": "Job Location Country",
                         "name": "job_location_country",
                         "aria-label": "",
-                        "type": "select",
+                        "type": "text",
                         "instructions": "",
                         "required": 1,
                         "conditional_logic": [
@@ -1109,211 +1143,12 @@
                             "class": "",
                             "id": ""
                         },
-                        "choices": {
-                            "Afghanistan": "Afghanistan",
-                            "Albania": "Albania",
-                            "Algeria": "Algeria",
-                            "Andorra": "Andorra",
-                            "Angola": "Angola",
-                            "Antigua and Barbuda": "Antigua and Barbuda",
-                            "Argentina": "Argentina",
-                            "Armenia": "Armenia",
-                            "Australia": "Australia",
-                            "Austria": "Austria",
-                            "Azerbaijan": "Azerbaijan",
-                            "Bahamas": "Bahamas",
-                            "Bahrain": "Bahrain",
-                            "Bangladesh": "Bangladesh",
-                            "Barbados": "Barbados",
-                            "Belarus": "Belarus",
-                            "Belgium": "Belgium",
-                            "Belize": "Belize",
-                            "Benin": "Benin",
-                            "Bhutan": "Bhutan",
-                            "Bolivia": "Bolivia",
-                            "Bosnia and Herzegovina": "Bosnia and Herzegovina",
-                            "Botswana": "Botswana",
-                            "Brazil": "Brazil",
-                            "Brunei": "Brunei",
-                            "Bulgaria": "Bulgaria",
-                            "Burkina Faso": "Burkina Faso",
-                            "Burundi": "Burundi",
-                            "Côte d'Ivoire": "Côte d'Ivoire",
-                            "Cabo Verde": "Cabo Verde",
-                            "Cambodia": "Cambodia",
-                            "Cameroon": "Cameroon",
-                            "Canada": "Canada",
-                            "Central African Republic": "Central African Republic",
-                            "Chad": "Chad",
-                            "Chile": "Chile",
-                            "China": "China",
-                            "Colombia": "Colombia",
-                            "Comoros": "Comoros",
-                            "Congo (Congo-Brazzaville)": "Congo (Congo-Brazzaville)",
-                            "Costa Rica": "Costa Rica",
-                            "Croatia": "Croatia",
-                            "Cuba": "Cuba",
-                            "Cyprus": "Cyprus",
-                            "Czechia (Czech Republic)": "Czechia (Czech Republic)",
-                            "Democratic Republic of the Congo": "Democratic Republic of the Congo",
-                            "Denmark": "Denmark",
-                            "Djibouti": "Djibouti",
-                            "Dominica": "Dominica",
-                            "Dominican Republic": "Dominican Republic",
-                            "Ecuador": "Ecuador",
-                            "Egypt": "Egypt",
-                            "El Salvador": "El Salvador",
-                            "Equatorial Guinea": "Equatorial Guinea",
-                            "Eritrea": "Eritrea",
-                            "Estonia": "Estonia",
-                            "Eswatini (fmr. \"Swaziland\")": "Eswatini (fmr. \"Swaziland\")",
-                            "Ethiopia": "Ethiopia",
-                            "Fiji": "Fiji",
-                            "Finland": "Finland",
-                            "France": "France",
-                            "Gabon": "Gabon",
-                            "Gambia": "Gambia",
-                            "Georgia": "Georgia",
-                            "Germany": "Germany",
-                            "Ghana": "Ghana",
-                            "Greece": "Greece",
-                            "Grenada": "Grenada",
-                            "Guatemala": "Guatemala",
-                            "Guinea": "Guinea",
-                            "Guinea-Bissau": "Guinea-Bissau",
-                            "Guyana": "Guyana",
-                            "Haiti": "Haiti",
-                            "Holy See": "Holy See",
-                            "Honduras": "Honduras",
-                            "Hungary": "Hungary",
-                            "Iceland": "Iceland",
-                            "India": "India",
-                            "Indonesia": "Indonesia",
-                            "Iran": "Iran",
-                            "Iraq": "Iraq",
-                            "Ireland": "Ireland",
-                            "Israel": "Israel",
-                            "Italy": "Italy",
-                            "Jamaica": "Jamaica",
-                            "Japan": "Japan",
-                            "Jordan": "Jordan",
-                            "Kazakhstan": "Kazakhstan",
-                            "Kenya": "Kenya",
-                            "Kiribati": "Kiribati",
-                            "Kuwait": "Kuwait",
-                            "Kyrgyzstan": "Kyrgyzstan",
-                            "Laos": "Laos",
-                            "Latvia": "Latvia",
-                            "Lebanon": "Lebanon",
-                            "Lesotho": "Lesotho",
-                            "Liberia": "Liberia",
-                            "Libya": "Libya",
-                            "Liechtenstein": "Liechtenstein",
-                            "Lithuania": "Lithuania",
-                            "Luxembourg": "Luxembourg",
-                            "Madagascar": "Madagascar",
-                            "Malawi": "Malawi",
-                            "Malaysia": "Malaysia",
-                            "Maldives": "Maldives",
-                            "Mali": "Mali",
-                            "Malta": "Malta",
-                            "Marshall Islands": "Marshall Islands",
-                            "Mauritania": "Mauritania",
-                            "Mauritius": "Mauritius",
-                            "Mexico": "Mexico",
-                            "Micronesia": "Micronesia",
-                            "Moldova": "Moldova",
-                            "Monaco": "Monaco",
-                            "Mongolia": "Mongolia",
-                            "Montenegro": "Montenegro",
-                            "Morocco": "Morocco",
-                            "Mozambique": "Mozambique",
-                            "Myanmar (formerly Burma)": "Myanmar (formerly Burma)",
-                            "Namibia": "Namibia",
-                            "Nauru": "Nauru",
-                            "Nepal": "Nepal",
-                            "Netherlands": "Netherlands",
-                            "New Zealand": "New Zealand",
-                            "Nicaragua": "Nicaragua",
-                            "Niger": "Niger",
-                            "Nigeria": "Nigeria",
-                            "North Korea": "North Korea",
-                            "North Macedonia (formerly Macedonia)": "North Macedonia (formerly Macedonia)",
-                            "Norway": "Norway",
-                            "Oman": "Oman",
-                            "Pakistan": "Pakistan",
-                            "Palau": "Palau",
-                            "Palestine State": "Palestine State",
-                            "Panama": "Panama",
-                            "Papua New Guinea": "Papua New Guinea",
-                            "Paraguay": "Paraguay",
-                            "Peru": "Peru",
-                            "Philippines": "Philippines",
-                            "Poland": "Poland",
-                            "Portugal": "Portugal",
-                            "Qatar": "Qatar",
-                            "Romania": "Romania",
-                            "Russia": "Russia",
-                            "Rwanda": "Rwanda",
-                            "Saint Kitts and Nevis": "Saint Kitts and Nevis",
-                            "Saint Lucia": "Saint Lucia",
-                            "Saint Vincent and the Grenadines": "Saint Vincent and the Grenadines",
-                            "Samoa": "Samoa",
-                            "San Marino": "San Marino",
-                            "Sao Tome and Principe": "Sao Tome and Principe",
-                            "Saudi Arabia": "Saudi Arabia",
-                            "Senegal": "Senegal",
-                            "Serbia": "Serbia",
-                            "Seychelles": "Seychelles",
-                            "Sierra Leone": "Sierra Leone",
-                            "Singapore": "Singapore",
-                            "Slovakia": "Slovakia",
-                            "Slovenia": "Slovenia",
-                            "Solomon Islands": "Solomon Islands",
-                            "Somalia": "Somalia",
-                            "South Africa": "South Africa",
-                            "South Korea": "South Korea",
-                            "South Sudan": "South Sudan",
-                            "Spain": "Spain",
-                            "Sri Lanka": "Sri Lanka",
-                            "Sudan": "Sudan",
-                            "Suriname": "Suriname",
-                            "Sweden": "Sweden",
-                            "Switzerland": "Switzerland",
-                            "Syria": "Syria",
-                            "Tajikistan": "Tajikistan",
-                            "Tanzania": "Tanzania",
-                            "Thailand": "Thailand",
-                            "Timor-Leste": "Timor-Leste",
-                            "Togo": "Togo",
-                            "Tonga": "Tonga",
-                            "Trinidad and Tobago": "Trinidad and Tobago",
-                            "Tunisia": "Tunisia",
-                            "Turkey": "Turkey",
-                            "Turkmenistan": "Turkmenistan",
-                            "Tuvalu": "Tuvalu",
-                            "Uganda": "Uganda",
-                            "Ukraine": "Ukraine",
-                            "United Arab Emirates": "United Arab Emirates",
-                            "United Kingdom": "United Kingdom",
-                            "United States of America": "United States of America",
-                            "Uruguay": "Uruguay",
-                            "Uzbekistan": "Uzbekistan",
-                            "Vanuatu": "Vanuatu",
-                            "Venezuela": "Venezuela",
-                            "Vietnam": "Vietnam",
-                            "Yemen": "Yemen",
-                            "Zambia": "Zambia",
-                            "Zimbabwe": "Zimbabwe"
-                        },
-                        "default_value": false,
-                        "return_format": "value",
-                        "multiple": 0,
-                        "allow_null": 0,
-                        "ui": 0,
-                        "ajax": 0,
+                        "wpml_cf_preferences": 0,
+                        "default_value": "",
+                        "maxlength": "",
                         "placeholder": "",
-                        "parent_repeater": "field_65665822e9a52"
+                        "prepend": "",
+                        "append": ""
                     },
                     {
                         "key": "field_65665b383d99a",
@@ -1349,8 +1184,7 @@
                         "maxlength": "",
                         "placeholder": "",
                         "prepend": "",
-                        "append": "",
-                        "parent_repeater": "field_65665822e9a52"
+                        "append": ""
                     },
                     {
                         "key": "field_65665b573d99b",
@@ -1386,8 +1220,7 @@
                         "maxlength": "",
                         "placeholder": "",
                         "prepend": "",
-                        "append": "",
-                        "parent_repeater": "field_65665822e9a52"
+                        "append": ""
                     },
                     {
                         "key": "field_65665b763d99c",
@@ -1420,8 +1253,7 @@
                         },
                         "wpml_cf_preferences": 0,
                         "default_value": "",
-                        "placeholder": "",
-                        "parent_repeater": "field_65665822e9a52"
+                        "placeholder": ""
                     },
                     {
                         "key": "field_65665bed3d99d",
@@ -1429,7 +1261,7 @@
                         "name": "job_basesalary_currency",
                         "aria-label": "",
                         "type": "text",
-                        "instructions": "The actual base salary for the job, as provided by the employer (not an estimate).\r\nExamples: USD or EUR.",
+                        "instructions": "The actual base salary for the job, as provided by the employer (not an estimate).\r\nExamples: USD or EUR. This needs to be the 3-letter ISO 4217 currency code.",
                         "required": 1,
                         "conditional_logic": 0,
                         "wrapper": {
@@ -1437,13 +1269,11 @@
                             "class": "",
                             "id": ""
                         },
-                        "wpml_cf_preferences": 0,
                         "default_value": "",
                         "maxlength": "",
                         "placeholder": "",
                         "prepend": "",
-                        "append": "",
-                        "parent_repeater": "field_65665822e9a52"
+                        "append": ""
                     },
                     {
                         "key": "field_65665c213d99e",
@@ -1466,8 +1296,7 @@
                         "placeholder": "",
                         "step": "",
                         "prepend": "",
-                        "append": "",
-                        "parent_repeater": "field_65665822e9a52"
+                        "append": ""
                     },
                     {
                         "key": "field_65665c5c3d99f",
@@ -1497,8 +1326,7 @@
                         "allow_null": 0,
                         "ui": 0,
                         "ajax": 0,
-                        "placeholder": "",
-                        "parent_repeater": "field_65665822e9a52"
+                        "placeholder": ""
                     }
                 ]
             },
@@ -1521,6 +1349,918 @@
                 "endpoint": 0
             },
             {
+                "key": "field_6578daeb8f2c4",
+                "label": "Create New Event Listing",
+                "name": "create_new_event_listing",
+                "aria-label": "",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "wpml_cf_preferences": 0,
+                "choices": {
+                    "No": "No",
+                    "Yes": "Yes"
+                },
+                "default_value": "No",
+                "return_format": "value",
+                "multiple": 0,
+                "allow_null": 0,
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_6578cf7b35517",
+                "label": "New Event",
+                "name": "event_listing",
+                "aria-label": "",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_6578daeb8f2c4",
+                            "operator": "==",
+                            "value": "Yes"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "wpml_cf_preferences": 0,
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_6578cfe72bb77",
+                        "label": "Event Name",
+                        "name": "event_name",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 0,
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_6578cfff2bb78",
+                        "label": "Event Start Date",
+                        "name": "event_start_date",
+                        "aria-label": "",
+                        "type": "date_time_picker",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 0,
+                        "display_format": "d\/m\/Y g:i a",
+                        "return_format": "Y-m-d H:i:s",
+                        "first_day": 1
+                    },
+                    {
+                        "key": "field_657eef3f9087c",
+                        "label": "Event Status",
+                        "name": "event_status",
+                        "aria-label": "",
+                        "type": "select",
+                        "instructions": "The status of the event. If you don't use this field, Google understands the eventStatus to be EventScheduled. Here are the supported values. You can use multiple statuses, if applicable (for example, if an event was both rescheduled and moved online)\r\n\r\nWarning: When the event status changes, DON'T remove the startDate. The startDate property is required to help identify the unique event.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "choices": {
+                            "EventScheduled": "EventScheduled",
+                            "EventCancelled": "EventCancelled",
+                            "EventMovedOnline": "EventMovedOnline",
+                            "EventPostponed": "EventPostponed",
+                            "EventRescheduled": "EventRescheduled"
+                        },
+                        "default_value": "EventScheduled",
+                        "return_format": "value",
+                        "multiple": 0,
+                        "allow_null": 0,
+                        "ui": 0,
+                        "ajax": 0,
+                        "placeholder": ""
+                    },
+                    {
+                        "key": "field_6578d03d2bb79",
+                        "label": "Event End Date",
+                        "name": "event_end_date",
+                        "aria-label": "",
+                        "type": "date_time_picker",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 0,
+                        "display_format": "d\/m\/Y g:i a",
+                        "return_format": "Y-m-d H:i:s",
+                        "first_day": 1
+                    },
+                    {
+                        "key": "field_6578d0ca2bb7a",
+                        "label": "Event Location",
+                        "name": "event_location",
+                        "aria-label": "",
+                        "type": "select",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 0,
+                        "choices": {
+                            "Physical location": "Physical location",
+                            "Online event": "Online event"
+                        },
+                        "default_value": false,
+                        "return_format": "value",
+                        "multiple": 0,
+                        "allow_null": 0,
+                        "ui": 0,
+                        "ajax": 0,
+                        "placeholder": ""
+                    },
+                    {
+                        "key": "field_657f5afa1aee5",
+                        "label": "Event Location Name",
+                        "name": "event_location_name",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "The location.name property must be the name of the venue or location, not a repeat of the title of the event. If you don't know the name of the location, don't use this property.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_6578d1122bb7b",
+                        "label": "Event Location Street Address",
+                        "name": "event_location_streetaddress",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_6578d0ca2bb7a",
+                                    "operator": "==",
+                                    "value": "Physical location"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 0,
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_6578d1702bb7c",
+                        "label": "Event Location Locality",
+                        "name": "event_location_locality",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_6578d0ca2bb7a",
+                                    "operator": "==",
+                                    "value": "Physical location"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 0,
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_6578d19b2bb7d",
+                        "label": "Event Location Region",
+                        "name": "event_location_region",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_6578d0ca2bb7a",
+                                    "operator": "==",
+                                    "value": "Physical location"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 0,
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_6578d1d92bb7e",
+                        "label": "Event Location Postal Code",
+                        "name": "event_location_postalcode",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_6578d0ca2bb7a",
+                                    "operator": "==",
+                                    "value": "Physical location"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 0,
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_6578d1fc2bb7f",
+                        "label": "Event Location Country",
+                        "name": "event_location_country",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_6578d0ca2bb7a",
+                                    "operator": "==",
+                                    "value": "Physical location"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 0,
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_6578d2252bb80",
+                        "label": "Event Location Latitude",
+                        "name": "event_location_latitude",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_6578d0ca2bb7a",
+                                    "operator": "==",
+                                    "value": "Physical location"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 0,
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_6578d2342bb81",
+                        "label": "Event Location Longitude",
+                        "name": "event_location_longitude",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_6578d0ca2bb7a",
+                                    "operator": "==",
+                                    "value": "Physical location"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 0,
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_6578d2542bb82",
+                        "label": "Event Location hasMap",
+                        "name": "event_location_hasmap",
+                        "aria-label": "",
+                        "type": "url",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_6578d0ca2bb7a",
+                                    "operator": "==",
+                                    "value": "Physical location"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": ""
+                    },
+                    {
+                        "key": "field_6578d34a2bb83",
+                        "label": "Event Location URL",
+                        "name": "event_location_url",
+                        "aria-label": "",
+                        "type": "url",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_6578d0ca2bb7a",
+                                    "operator": "==",
+                                    "value": "Online event"
+                                }
+                            ],
+                            [
+                                {
+                                    "field": "field_657eef3f9087c",
+                                    "operator": "==",
+                                    "value": "EventMovedOnline"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": ""
+                    },
+                    {
+                        "key": "field_6578d3922bb84",
+                        "label": "Event Description",
+                        "name": "event_description",
+                        "aria-label": "",
+                        "type": "textarea",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 0,
+                        "default_value": "",
+                        "maxlength": "",
+                        "rows": "",
+                        "placeholder": "",
+                        "new_lines": ""
+                    },
+                    {
+                        "key": "field_6578d3be2bb85",
+                        "label": "Event Attendance Mode",
+                        "name": "event_attendance_mode",
+                        "aria-label": "",
+                        "type": "select",
+                        "instructions": "Indicates whether the event occurs online, offline at a physical location, or a mix of both online and offline. If you don't include this property, Google understands the event mode to be OfflineEventAttendanceMode, which means Google understands that the event is happening at a physical location. Use one of the following values:\r\n\r\nOfflineEventAttendanceMode: The event can be attended offline at a physical location.\r\nOnlineEventAttendanceMode: The event can be attended online.\r\nMixedEventAttendanceMode: The event can be attended both online and offline at a physical location.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 0,
+                        "choices": {
+                            "OfflineEventAttendanceMode": "OfflineEventAttendanceMode",
+                            "OnlineEventAttendanceMode": "OnlineEventAttendanceMode",
+                            "MixedEventAttendanceMode": "MixedEventAttendanceMode"
+                        },
+                        "default_value": false,
+                        "return_format": "value",
+                        "multiple": 0,
+                        "allow_null": 0,
+                        "ui": 0,
+                        "ajax": 0,
+                        "placeholder": ""
+                    },
+                    {
+                        "key": "field_6578d43d2bb86",
+                        "label": "Event Image",
+                        "name": "event_image",
+                        "aria-label": "",
+                        "type": "repeater",
+                        "instructions": "URL of an image or logo for the event or tour. Including an image helps users understand and engage with your event. We recommend that images are 1920px wide (the minimum width is 720px).\r\n\r\nAdditional image guidelines:\r\n\r\nImage URLs must be crawlable and indexable. To check if Google can access your URLs, use the URL Inspection tool.\r\nImages must represent the marked up content.\r\nImages must be in a file format that's supported by Google Images.\r\nFor best results, we recommend providing multiple high-resolution images (minimum of 50K pixels when multiplying width and height) with the following aspect ratios: 16x9, 4x3, and 1x1.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 0,
+                        "layout": "table",
+                        "pagination": 0,
+                        "min": 0,
+                        "max": 0,
+                        "collapsed": "",
+                        "button_label": "Add Row",
+                        "rows_per_page": 20,
+                        "sub_fields": [
+                            {
+                                "key": "field_6578d4512bb87",
+                                "label": "Event Image Repeater",
+                                "name": "event_image_repeater",
+                                "aria-label": "",
+                                "type": "image",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "wpml_cf_preferences": 0,
+                                "return_format": "array",
+                                "library": "all",
+                                "min_width": "",
+                                "min_height": "",
+                                "min_size": "",
+                                "max_width": "",
+                                "max_height": "",
+                                "max_size": "",
+                                "mime_types": "",
+                                "preview_size": "medium",
+                                "parent_repeater": "field_6578d43d2bb86"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_657eed5deb709",
+                        "label": "Event Organizer",
+                        "name": "event_organizer",
+                        "aria-label": "",
+                        "type": "select",
+                        "instructions": "The person or organization that is hosting the event. This is especially important for online events, where there isn't any venue information. If you want to include this optional field, you need to select either Person or Organization.",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_64121c9d4c59a",
+                                    "operator": "!=empty"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "choices": {
+                            "Optionally select one of the below two": "Optionally select one of the below two",
+                            "Person": "Person",
+                            "Organization": "Organization"
+                        },
+                        "default_value": false,
+                        "return_format": "value",
+                        "multiple": 0,
+                        "allow_null": 0,
+                        "ui": 0,
+                        "ajax": 0,
+                        "placeholder": ""
+                    },
+                    {
+                        "key": "field_657eeda7eb70a",
+                        "label": "Event Organizer Name",
+                        "name": "event_organizer_name",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_657eed5deb709",
+                                    "operator": "!=",
+                                    "value": "Optionally select one of the below two"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_657eede2eb70b",
+                        "label": "Event Organizer URL",
+                        "name": "event_organizer_url",
+                        "aria-label": "",
+                        "type": "url",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_657eed5deb709",
+                                    "operator": "!=",
+                                    "value": "Optionally select one of the below two"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": ""
+                    },
+                    {
+                        "key": "field_657eec2ceb705",
+                        "label": "Event Performer",
+                        "name": "event_performer",
+                        "aria-label": "",
+                        "type": "select",
+                        "instructions": "The participants performing at the event, such as artists and comedians. If you want to include this optional field, you need to select either Person or PerformingGroup.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "choices": {
+                            "Optionally select one of the below two": "Optionally select one of the below two",
+                            "Person": "Person",
+                            "PerformingGroup": "PerformingGroup"
+                        },
+                        "default_value": "Optionally select one of the below two",
+                        "return_format": "value",
+                        "multiple": 0,
+                        "allow_null": 0,
+                        "ui": 0,
+                        "ajax": 0,
+                        "placeholder": ""
+                    },
+                    {
+                        "key": "field_657eec97eb706",
+                        "label": "Event Performer Person",
+                        "name": "event_performer_person",
+                        "aria-label": "",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_657eec2ceb705",
+                                    "operator": "==",
+                                    "value": "Person"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "layout": "table",
+                        "pagination": 0,
+                        "min": 0,
+                        "max": 0,
+                        "collapsed": "",
+                        "button_label": "Add Row",
+                        "rows_per_page": 20,
+                        "sub_fields": [
+                            {
+                                "key": "field_657eecc5eb707",
+                                "label": "Even Performer Person Name",
+                                "name": "even_performer_person_name",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "parent_repeater": "field_657eec97eb706"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_657eece3eb708",
+                        "label": "Event Performing Group Name",
+                        "name": "event_performing_group_name",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_657eec2ceb705",
+                                    "operator": "==",
+                                    "value": "PerformingGroup"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_657f62c0d005b",
+                        "label": "Event Offer",
+                        "name": "event_offer",
+                        "aria-label": "",
+                        "type": "select",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "choices": {
+                            "No": "No",
+                            "Yes": "Yes"
+                        },
+                        "default_value": "No",
+                        "return_format": "value",
+                        "multiple": 0,
+                        "allow_null": 0,
+                        "ui": 0,
+                        "ajax": 0,
+                        "placeholder": ""
+                    },
+                    {
+                        "key": "field_657f630dd005c",
+                        "label": "Event Offers",
+                        "name": "event_offers",
+                        "aria-label": "",
+                        "type": "repeater",
+                        "instructions": "A nested Offer, one for each ticket type.",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_657f62c0d005b",
+                                    "operator": "==",
+                                    "value": "Yes"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "layout": "row",
+                        "pagination": 0,
+                        "min": 0,
+                        "max": 0,
+                        "collapsed": "",
+                        "button_label": "Add Row",
+                        "rows_per_page": 20,
+                        "sub_fields": [
+                            {
+                                "key": "field_657f637bd005d",
+                                "label": "Event Offers Availability",
+                                "name": "event_offers_availability",
+                                "aria-label": "",
+                                "type": "select",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "InStock": "InStock",
+                                    "SoldOut": "SoldOut",
+                                    "PreOrder": "PreOrder"
+                                },
+                                "default_value": false,
+                                "return_format": "value",
+                                "multiple": 0,
+                                "allow_null": 0,
+                                "ui": 0,
+                                "ajax": 0,
+                                "placeholder": "",
+                                "parent_repeater": "field_657f630dd005c"
+                            },
+                            {
+                                "key": "field_657f63c0d005e",
+                                "label": "Event Offers Price",
+                                "name": "event_offers_price",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": "",
+                                "max": "",
+                                "placeholder": "",
+                                "step": "",
+                                "prepend": "",
+                                "append": "",
+                                "parent_repeater": "field_657f630dd005c"
+                            },
+                            {
+                                "key": "field_657f63e4d005f",
+                                "label": "Event Offers priceCurrency",
+                                "name": "event_offers_pricecurrency",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "The 3-letter ISO 4217 currency code.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "parent_repeater": "field_657f630dd005c"
+                            },
+                            {
+                                "key": "field_657f6436d0060",
+                                "label": "Event Offers validFrom",
+                                "name": "event_offers_validfrom",
+                                "aria-label": "",
+                                "type": "date_time_picker",
+                                "instructions": "The date and time when tickets go on sale (only required on date-restricted offers).",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "display_format": "d\/m\/Y g:i a",
+                                "return_format": "d\/m\/Y g:i a",
+                                "first_day": 1,
+                                "parent_repeater": "field_657f630dd005c"
+                            },
+                            {
+                                "key": "field_657f6466d0061",
+                                "label": "Event Offers URL",
+                                "name": "event_offers_url",
+                                "aria-label": "",
+                                "type": "url",
+                                "instructions": "The URL of a page providing the ability to buy tickets.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "parent_repeater": "field_657f630dd005c"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
                 "key": "field_641968970e3b2",
                 "label": "Person",
                 "name": "",
@@ -1539,11 +2279,11 @@
                 "endpoint": 0
             },
             {
-                "key": "field_6421a7dec8793",
-                "label": "Name",
-                "name": "person_name",
+                "key": "field_656899c9a1c87",
+                "label": "New Person",
+                "name": "person_listing",
                 "aria-label": "",
-                "type": "text",
+                "type": "group",
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -1553,485 +2293,504 @@
                     "id": ""
                 },
                 "wpml_cf_preferences": 0,
-                "default_value": "",
-                "maxlength": "",
-                "placeholder": "Please enter your name",
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_6421a809c8794",
-                "label": "Alternate Name",
-                "name": "person_alternate_name",
-                "aria-label": "",
-                "type": "text",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "wpml_cf_preferences": 2,
-                "default_value": "",
-                "maxlength": "",
-                "placeholder": "Alternate Name...",
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_6421a824c8795",
-                "label": "Job Title",
-                "name": "person_job_title",
-                "aria-label": "",
-                "type": "text",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "wpml_cf_preferences": 2,
-                "default_value": "",
-                "maxlength": "",
-                "placeholder": "Please enter your job title here...",
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_6421a849c8796",
-                "label": "Image",
-                "name": "person_image",
-                "aria-label": "",
-                "type": "image",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "wpml_cf_preferences": 2,
-                "return_format": "array",
-                "library": "all",
-                "min_width": "",
-                "min_height": "",
-                "min_size": "",
-                "max_width": "",
-                "max_height": "",
-                "max_size": "",
-                "mime_types": "",
-                "preview_size": "medium"
-            },
-            {
-                "key": "field_6421a85fc8797",
-                "label": "Birthdate",
-                "name": "person_birthdate",
-                "aria-label": "",
-                "type": "date_picker",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "wpml_cf_preferences": 0,
-                "display_format": "d\/m\/Y",
-                "return_format": "d\/m\/Y",
-                "first_day": 1
-            },
-            {
-                "key": "field_6421a885c8798",
-                "label": "Contact",
-                "name": "",
-                "aria-label": "",
-                "type": "message",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "wpml_cf_preferences": 0,
-                "message": "",
-                "new_lines": "wpautop",
-                "esc_html": 0
-            },
-            {
-                "key": "field_6421a89fc8799",
-                "label": "Email",
-                "name": "person_email",
-                "aria-label": "",
-                "type": "email",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "wpml_cf_preferences": 0,
-                "default_value": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_6421a8b7c879a",
-                "label": "URL",
-                "name": "person_url",
-                "aria-label": "",
-                "type": "url",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "wpml_cf_preferences": 2,
-                "default_value": "",
-                "placeholder": "https:\/\/www.janedoe.com\/"
-            },
-            {
-                "key": "field_6421a8d9c879b",
-                "label": "Telephone",
-                "name": "person_telephone",
-                "aria-label": "",
-                "type": "text",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "wpml_cf_preferences": 2,
-                "default_value": "",
-                "maxlength": "",
-                "placeholder": "(425) 123-4567",
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_6421a8fac879c",
-                "label": "Address",
-                "name": "",
-                "aria-label": "",
-                "type": "message",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "wpml_cf_preferences": 2,
-                "message": "",
-                "new_lines": "wpautop",
-                "esc_html": 0
-            },
-            {
-                "key": "field_6421a923c879d",
-                "label": "Street",
-                "name": "person_street",
-                "aria-label": "",
-                "type": "text",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "wpml_cf_preferences": 2,
-                "default_value": "",
-                "maxlength": "",
-                "placeholder": "Any street 3A",
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_6421a939c879e",
-                "label": "Postal Code",
-                "name": "person_postal_code",
-                "aria-label": "",
-                "type": "text",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "wpml_cf_preferences": 2,
-                "default_value": "",
-                "maxlength": "",
-                "placeholder": "Any Postal Code",
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_6421abe194444",
-                "label": "Locality",
-                "name": "person_locality",
-                "aria-label": "",
-                "type": "text",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "wpml_cf_preferences": 2,
-                "default_value": "",
-                "maxlength": "",
-                "placeholder": "Any city",
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_6421a952c879f",
-                "label": "Country ISO Code",
-                "name": "person_country_iso_code",
-                "aria-label": "",
-                "type": "text",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "wpml_cf_preferences": 0,
-                "default_value": "",
-                "maxlength": "",
-                "placeholder": "US",
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_6421a968c87a0",
-                "label": "Region ISO Code",
-                "name": "person_region_iso_code",
-                "aria-label": "",
-                "type": "text",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "wpml_cf_preferences": 0,
-                "default_value": "",
-                "maxlength": "",
-                "placeholder": "CA",
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_6421a983c87a1",
-                "label": "Colleagues",
-                "name": "",
-                "aria-label": "",
-                "type": "message",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "wpml_cf_preferences": 2,
-                "message": "",
-                "new_lines": "wpautop",
-                "esc_html": 0
-            },
-            {
-                "key": "field_6421a99cc87a2",
-                "label": "Colleague",
-                "name": "person_colleague",
-                "aria-label": "",
-                "type": "text",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "wpml_cf_preferences": 2,
-                "default_value": "",
-                "maxlength": "",
-                "placeholder": "Comma seperated URLs",
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_6421a9bfc87a3",
-                "label": "Work",
-                "name": "",
-                "aria-label": "",
-                "type": "message",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "wpml_cf_preferences": 2,
-                "message": "",
-                "new_lines": "wpautop",
-                "esc_html": 0
-            },
-            {
-                "key": "field_6421a9d3c87a4",
-                "label": "Organization Name",
-                "name": "person_organization_name",
-                "aria-label": "",
-                "type": "text",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "wpml_cf_preferences": 2,
-                "default_value": "",
-                "maxlength": "",
-                "placeholder": "This persons company name",
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_6421aa0ac87a5",
-                "label": "Alternate Name",
-                "name": "person_organization_alternate_name",
-                "aria-label": "",
-                "type": "text",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "wpml_cf_preferences": 2,
-                "default_value": "",
-                "maxlength": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_6421aa3cc87a6",
-                "label": "URL",
-                "name": "person_organization_url",
-                "aria-label": "",
-                "type": "url",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "wpml_cf_preferences": 0,
-                "default_value": "",
-                "placeholder": "https:\/\/www.yourawesomecompany.com\/"
-            },
-            {
-                "key": "field_6421aa5fc87a7",
-                "label": "Logo",
-                "name": "person_organization_logo",
-                "aria-label": "",
-                "type": "image",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "wpml_cf_preferences": 2,
-                "return_format": "array",
-                "library": "all",
-                "min_width": "",
-                "min_height": "",
-                "min_size": "",
-                "max_width": "",
-                "max_height": "",
-                "max_size": "",
-                "mime_types": "",
-                "preview_size": "medium"
-            },
-            {
-                "key": "field_6421aa79c87a8",
-                "label": "Same as",
-                "name": "",
-                "aria-label": "",
-                "type": "message",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "wpml_cf_preferences": 2,
-                "message": "",
-                "new_lines": "wpautop",
-                "esc_html": 0
-            },
-            {
-                "key": "field_6421aa8dc87a9",
-                "label": "Website \/ Social Media",
-                "name": "person_website__social_media",
-                "aria-label": "",
-                "type": "textarea",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "wpml_cf_preferences": 2,
-                "default_value": "",
-                "maxlength": "",
-                "rows": "",
-                "placeholder": "",
-                "new_lines": ""
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_6421a7dec8793",
+                        "label": "Name",
+                        "name": "person_name",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 0,
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "Please enter your name",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_6421a809c8794",
+                        "label": "Alternate Name",
+                        "name": "person_alternate_name",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 2,
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "Alternate Name...",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_6421a824c8795",
+                        "label": "Job Title",
+                        "name": "person_job_title",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 2,
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "Please enter your job title here...",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_6421a849c8796",
+                        "label": "Image",
+                        "name": "person_image",
+                        "aria-label": "",
+                        "type": "image",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 2,
+                        "return_format": "array",
+                        "library": "all",
+                        "min_width": "",
+                        "min_height": "",
+                        "min_size": "",
+                        "max_width": "",
+                        "max_height": "",
+                        "max_size": "",
+                        "mime_types": "",
+                        "preview_size": "medium"
+                    },
+                    {
+                        "key": "field_6421a85fc8797",
+                        "label": "Birthdate",
+                        "name": "person_birthdate",
+                        "aria-label": "",
+                        "type": "date_picker",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 0,
+                        "display_format": "d\/m\/Y",
+                        "return_format": "d\/m\/Y",
+                        "first_day": 1
+                    },
+                    {
+                        "key": "field_6421a885c8798",
+                        "label": "Contact",
+                        "name": "",
+                        "aria-label": "",
+                        "type": "message",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 0,
+                        "message": "",
+                        "new_lines": "wpautop",
+                        "esc_html": 0
+                    },
+                    {
+                        "key": "field_6421a89fc8799",
+                        "label": "Email",
+                        "name": "person_email",
+                        "aria-label": "",
+                        "type": "email",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 0,
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_6421a8b7c879a",
+                        "label": "URL",
+                        "name": "person_url",
+                        "aria-label": "",
+                        "type": "url",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 2,
+                        "default_value": "",
+                        "placeholder": "https:\/\/www.janedoe.com\/"
+                    },
+                    {
+                        "key": "field_6421a8d9c879b",
+                        "label": "Telephone",
+                        "name": "person_telephone",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 2,
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "(425) 123-4567",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_6421a8fac879c",
+                        "label": "Address",
+                        "name": "",
+                        "aria-label": "",
+                        "type": "message",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 2,
+                        "message": "",
+                        "new_lines": "wpautop",
+                        "esc_html": 0
+                    },
+                    {
+                        "key": "field_6421a923c879d",
+                        "label": "Street",
+                        "name": "person_street",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 2,
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "Any street 3A",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_6421a939c879e",
+                        "label": "Postal Code",
+                        "name": "person_postal_code",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 2,
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "Any Postal Code",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_6421abe194444",
+                        "label": "Locality",
+                        "name": "person_locality",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 2,
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "Any city",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_6421a952c879f",
+                        "label": "Country ISO Code",
+                        "name": "person_country_iso_code",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 0,
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "US",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_6421a968c87a0",
+                        "label": "Region ISO Code",
+                        "name": "person_region_iso_code",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 0,
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "CA",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_6421a983c87a1",
+                        "label": "Colleagues",
+                        "name": "",
+                        "aria-label": "",
+                        "type": "message",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 2,
+                        "message": "",
+                        "new_lines": "wpautop",
+                        "esc_html": 0
+                    },
+                    {
+                        "key": "field_6421a99cc87a2",
+                        "label": "Colleague",
+                        "name": "person_colleague",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 2,
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "Comma seperated URLs",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_6421a9bfc87a3",
+                        "label": "Work",
+                        "name": "",
+                        "aria-label": "",
+                        "type": "message",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 2,
+                        "message": "",
+                        "new_lines": "wpautop",
+                        "esc_html": 0
+                    },
+                    {
+                        "key": "field_6421a9d3c87a4",
+                        "label": "Organization Name",
+                        "name": "person_organization_name",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 2,
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "This persons company name",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_6421aa0ac87a5",
+                        "label": "Alternate Name",
+                        "name": "person_organization_alternate_name",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 2,
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_6421aa3cc87a6",
+                        "label": "URL",
+                        "name": "person_organization_url",
+                        "aria-label": "",
+                        "type": "url",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 0,
+                        "default_value": "",
+                        "placeholder": "https:\/\/www.yourawesomecompany.com\/"
+                    },
+                    {
+                        "key": "field_6421aa5fc87a7",
+                        "label": "Logo",
+                        "name": "person_organization_logo",
+                        "aria-label": "",
+                        "type": "image",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 2,
+                        "return_format": "array",
+                        "library": "all",
+                        "min_width": "",
+                        "min_height": "",
+                        "min_size": "",
+                        "max_width": "",
+                        "max_height": "",
+                        "max_size": "",
+                        "mime_types": "",
+                        "preview_size": "medium"
+                    },
+                    {
+                        "key": "field_6421aa79c87a8",
+                        "label": "Same as",
+                        "name": "",
+                        "aria-label": "",
+                        "type": "message",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 2,
+                        "message": "",
+                        "new_lines": "wpautop",
+                        "esc_html": 0
+                    },
+                    {
+                        "key": "field_6421aa8dc87a9",
+                        "label": "Website \/ Social Media",
+                        "name": "person_website__social_media",
+                        "aria-label": "",
+                        "type": "textarea",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 2,
+                        "default_value": "",
+                        "maxlength": "",
+                        "rows": "",
+                        "placeholder": "",
+                        "new_lines": ""
+                    }
+                ]
             },
             {
                 "key": "field_641968a10e3b3",
@@ -2052,11 +2811,11 @@
                 "endpoint": 0
             },
             {
-                "key": "field_64196aaead933",
-                "label": "Course Name",
-                "name": "course_name",
+                "key": "field_65689a7aa1c88",
+                "label": "New Course",
+                "name": "course_listing",
                 "aria-label": "",
-                "type": "text",
+                "type": "group",
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -2066,71 +2825,8 @@
                     "id": ""
                 },
                 "wpml_cf_preferences": 2,
-                "default_value": "",
-                "maxlength": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_64196ab9ad934",
-                "label": "Course Description",
-                "name": "course_description",
-                "aria-label": "",
-                "type": "wysiwyg",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "wpml_cf_preferences": 2,
-                "default_value": "",
-                "tabs": "all",
-                "toolbar": "full",
-                "media_upload": 1,
-                "delay": 0
-            },
-            {
-                "key": "field_64196b09d5fec",
-                "label": "Provider Information: Provider Name",
-                "name": "course_provider_name",
-                "aria-label": "",
-                "type": "text",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "wpml_cf_preferences": 2,
-                "default_value": "",
-                "maxlength": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_64196b35d5fee",
-                "label": "Same as: Website \/ Social Media",
-                "name": "course_website",
-                "aria-label": "",
-                "type": "url",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "wpml_cf_preferences": 2,
-                "default_value": "",
-                "placeholder": "https:\/\/your-website.com\/"
+                "layout": "block",
+                "sub_fields": []
             }
         ],
         "location": [
@@ -2139,6 +2835,13 @@
                     "param": "page_type",
                     "operator": "==",
                     "value": "front_page"
+                }
+            ],
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
                 }
             ],
             [

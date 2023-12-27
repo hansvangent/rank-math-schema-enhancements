@@ -14,7 +14,7 @@
 class SchemaEnhancements {
 
 	public function __construct() {
-		add_filter('rank_math/json_ld', array($this, 'enhance_json_ld'), 10, 2);
+		add_filter('rank_math/json_ld', array($this, 'enhance_json_ld'), 99, 2);
 	}
 
 	public function enhance_json_ld($data, $jsonld) {
@@ -38,29 +38,25 @@ class SchemaEnhancements {
 			$hasPersonAwards = have_rows('PersonAwards', 'user_' . $author_id);
 
 			if ($hasPersonTitle || $hasPersonhonorificPrefix || $hasPersonhonorificSuffix || $hasPersonKnowsAbout || $hasPersonAlumniOf || $hasPersonAwards) {
-				$data['personSchema'] = [
-					'@type' => 'Person',
-				];
 
 				if ($hasPersonTitle) {
-					 $data['personSchema']['jobTitle'] = $hasPersonTitle;
+					$data['ProfilePage']['jobTitle'] = $hasPersonTitle;
 				}
 
 				if ($hasPersonhonorificPrefix) {
-					$data['personSchema']['honorificPrefix'] = $hasPersonhonorificPrefix;
+					$data['ProfilePage']['honorificPrefix'] = $hasPersonhonorificPrefix;
 				}
 
 				if ($hasPersonhonorificSuffix) {
-					$data['personSchema']['honorificSuffix'] = $hasPersonhonorificSuffix;
+					$data['ProfilePage']['honorificSuffix'] = $hasPersonhonorificSuffix;
 				}
 
-
 				if ($hasPersonKnowsAbout) {
-					$data['personSchema']['knowsAbout'] = [$hasPersonKnowsAbout];
+					$data['ProfilePage']['knowsAbout'] = $hasPersonKnowsAbout;
 				}
 
 				if ($hasPersonAlumniOf) {
-					$data['personSchema']['alumniOf'] = [];
+					$data['ProfilePage']['alumniOf'] = [];
 
 					while (have_rows('PersonAlumniOf', 'user_' . $author_id)) {
 						the_row();
@@ -77,7 +73,7 @@ class SchemaEnhancements {
 							}
 						}
 
-						$data['personSchema']['alumniOf'][] = $alumniOf_item;
+						$data['ProfilePage']['alumniOf'][] = $alumniOf_item;
 					}
 				}
 
@@ -90,10 +86,10 @@ class SchemaEnhancements {
 					}
 
 					if (!empty($awards_list)) {
-						$data['personSchema']['awards'] = $awards_list;
+						$data['ProfilePage']['awards'] = $awards_list;
 					}
 				}
-			 }
+			}
 		}
 
 		if (have_rows('frequently_asked_questions') && !is_author()) {

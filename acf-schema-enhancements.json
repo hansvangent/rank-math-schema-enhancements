@@ -71,7 +71,7 @@
                 "label": "knowsAbout markup",
                 "name": "PersonKnowsAbout",
                 "aria-label": "",
-                "type": "text",
+                "type": "repeater",
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -80,12 +80,57 @@
                     "class": "",
                     "id": ""
                 },
-                "wpml_cf_preferences": 2,
-                "default_value": "",
-                "maxlength": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": ""
+                "wpml_cf_preferences": 1,
+                "layout": "table",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "Add Row",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_658c96bc6e252",
+                        "label": "knowsAbout Name",
+                        "name": "PersonKnowsAboutname",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 2,
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_655889e972a4e"
+                    },
+                    {
+                        "key": "field_658c96dc6e253",
+                        "label": "knowsAbout Wikidata Link",
+                        "name": "PersonKnowsAboutwikidata_link",
+                        "aria-label": "",
+                        "type": "url",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "wpml_cf_preferences": 1,
+                        "default_value": "",
+                        "placeholder": "",
+                        "parent_repeater": "field_655889e972a4e"
+                    }
+                ]
             },
             {
                 "key": "field_6558da9edee03",

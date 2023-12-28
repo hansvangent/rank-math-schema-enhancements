@@ -52,7 +52,22 @@ class SchemaEnhancements {
 				}
 
 				if ($hasPersonKnowsAbout) {
-					$data['ProfilePage']['knowsAbout'] = $hasPersonKnowsAbout;
+					$data['ProfilePage']['knowsAbout'] = [];
+
+					while (have_rows('PersonKnowsAbout', 'user_' . $author_id)) {
+						the_row();
+						$knowsAbout_item = [
+							'@type' => 'Thing',
+							'name' => get_sub_field('PersonKnowsAboutname')
+						];
+
+						$wikidata_link = get_sub_field('PersonKnowsAboutwikidata_link');
+						if (!empty($wikidata_link)) {
+							$knowsAbout_item['url'] = $wikidata_link;
+						}
+
+						$data['ProfilePage']['knowsAbout'][] = $knowsAbout_item;
+					}
 				}
 
 				if ($hasPersonAlumniOf) {
@@ -89,7 +104,7 @@ class SchemaEnhancements {
 						$data['ProfilePage']['awards'] = $awards_list;
 					}
 				}
-			}
+			 }
 		}
 
 		if (have_rows('frequently_asked_questions') && !is_author()) {

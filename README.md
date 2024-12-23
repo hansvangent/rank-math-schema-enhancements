@@ -29,6 +29,13 @@ require_once get_template_directory() . '/inc/schema-enhancements.php';
 new SchemaEnhancements();
 ```
 
+If you're using a child theme use the following code:
+
+```php
+require_once get_stylesheet_directory() . '/inc/schema-enhancements.php'';
+new TableOfContents();
+```
+
 3. Import the "acf-schema-enhancements.json" file into your Advanced Custom Fields under tools > import to add the necessary fields into the user profiles (for the person enhancements) and posts/pages (for the FAQ enhancements and future JobPosting, Event and Course).
 
 4. After adding content to the user profiles on your website, the schema markup will automatically be added to the author archive page and to the posts and pages created by that author. If you want to show the content of those fields on the author archive page in HTML, you can do so by using the following code example:
